@@ -23,10 +23,10 @@ class Home extends Controller
     $data = array();
 
     $viewPath = PATH_MODULES;
-    $viewPath .= 'Site/Views';
+    $viewPath .= 'Admin/Views';
 
     $viewTemplatePath = PATH_MODULES;
-    $viewTemplatePath .= 'Site/Views/temp';
+    $viewTemplatePath .= 'Admin/Views/partials';
 
     $viewName = $viewPath . DS;
     $viewName .= strtolower($args['controller']);
