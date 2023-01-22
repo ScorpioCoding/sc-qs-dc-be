@@ -27,7 +27,8 @@ services:
       - ../env:/var/www/env
     networks:
       - scorpionet
-  # #db
+
+  #db
   qsdb:
     container_name: qsdb
     platform: linux/x86_64
@@ -43,6 +44,7 @@ services:
     networks:
       - scorpionet
 
+  #phpmyadmin
   qsadmin:
     container_name: qsadmin
     image: phpmyadmin/phpmyadmin

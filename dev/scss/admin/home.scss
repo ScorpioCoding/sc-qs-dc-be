@@ -2,7 +2,7 @@
 @use '../core/abstracts';
 @use '../core/base';
 
-@use 'temp';
+@use 'partials';
 
 :root {
   --body-bg-clr: var(--surface-3);

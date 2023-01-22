@@ -4,16 +4,16 @@ const postcss = require("gulp-postcss");
 const cssNano = require("cssnano");
 const terser = require("gulp-terser");
 
-function copyImages() {
-  return src("../dev/img/**/*.{gif,png,jpg,jpeg,svg}").pipe(
-    dest("../html/public/img/")
+//Views for Site
+function copyAdminViews() {
+  return src("../dev/views/admin/**/*.phtml").pipe(
+    dest("../html/App/Modules/Admin/Views/")
   );
 }
 
-//Views for Site
-function copySiteViews() {
-  return src("../dev/views/site/**/*.phtml").pipe(
-    dest("../html/App/Modules/Site/Views/")
+function copyImages() {
+  return src("../dev/img/**/*.{gif,png,jpg,jpeg,svg}").pipe(
+    dest("../html/public/img/")
   );
 }
 
@@ -31,14 +31,14 @@ function jsTask() {
 }
 
 function watchTask() {
-  watch("../dev/views/site/**/*.phtml", copySiteViews);
+  watch("../dev/views/admin/**/*.phtml", copyAdminViews);
   watch("../dev/img/**/*.{gif,png,jpg,jpeg,svg}", copyImages);
   watch("../dev/scss/**/*.scss", scssTask);
   watch("../dev/js/**/*.js", jsTask);
 }
 
 exports.default = series(
-  copySiteViews,
+  copyAdminViews,
   copyImages,
   scssTask,
   jsTask,
