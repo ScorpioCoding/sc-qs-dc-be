@@ -4,7 +4,7 @@ use App\Core\App;
 
 define("DS", DIRECTORY_SEPARATOR);
 define('PATH_ROOT', dirname(__FILE__, 2) . DS);
-define("PATH_ENV", PATH_ROOT . ".env" . DS);
+define("PATH_ENV", dirname(__FILE__, 3) . DS . "_env" . DS);
 define("PATH_APP", PATH_ROOT . "App" . DS);
 define("PATH_MODULES", PATH_APP . "Modules" . DS);
 
